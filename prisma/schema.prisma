@@ -10,17 +10,35 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-model User {
-  id    Int    @id @default(autoincrement())
+model Client {
+  id    Int     @id @default(autoincrement())
   name  String
-  email String @unique
-  Post  Post[]
+  email String  @unique
+  Order Order[]
 }
 
-model Post {
-  id        Int    @id @default(autoincrement())
-  title     String
-  paragraph String
-  idUser    Int
-  user      User   @relation(fields: [idUser], references: [id])
+model Order {
+  id          Int           @id @default(autoincrement())
+  date        DateTime      @default(now())
+  state       String
+  ProductItem ProductItem[]
+  idClient    Int
+  client      Client        @relation(fields: [idClient], references: [id])
+}
+
+model ProductItem {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  value     Float
+  idProduct Int
+  idOrder   Int
+  product   Product @relation(fields: [idProduct], references: [id])
+  order     Order   @relation(fields: [idOrder], references: [id])
+}
+
+model Product {
+  id          Int           @id @default(autoincrement())
+  name        String
+  value       Float
+  ProductItem ProductItem[]
 }

@@ -1,6 +1,6 @@
 const AlreadyExistError = require("../errors/AlreadyExistError");
 
-class UserService {
+class UserService  {
   constructor (userRepository) {
     this.userRepository = userRepository;
   }
@@ -17,7 +17,7 @@ class UserService {
     const user = await this.userRepository.create({name, email});
 
     return user;
-  }
+  }  
 }
 
 module.exports = UserService
