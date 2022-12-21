@@ -35,7 +35,7 @@ orderRouter.post("/", async (req, res) => {
   }
 });
 
-orderRouter.post("/:id", async (req, res) => {
+orderRouter.post("/item/:id", async (req, res) => {
   try {
     const {id} = req.params;
     const { idProduct, quantity } =  req.body
@@ -47,7 +47,7 @@ orderRouter.post("/:id", async (req, res) => {
       productRepository
     );
 
-    const productItem = await orderService.addProduct({idProduct, idOrder: +id, quantity});
+    await orderService.addProduct({idProduct, idOrder: +id, quantity});
 
     const order = await orderRepository.findOne(+id);
 
