@@ -1,12 +1,12 @@
 const {Router} = require("express");
-const UserRepository = require("../repositories/UserRepository")
-const UserService = require("../services/UserService")
+const ClientRepository = require("../repositories/ClientRepository")
+const ClientService = require("../services/ClientService")
 
 const userRouter = Router();
-const userRepository = new UserRepository();
+const clientRepository = new ClientRepository();
 
 userRouter.get("/", async (request, response) => {
-  const users = await userRepository.findAll();
+  const users = await clientRepository.findAll();
   return response.send(users)
 });
 
@@ -14,8 +14,8 @@ userRouter.post("/", async (request, response) => {
   try {
     const {name, email} = request.body;
   
-    const userService = new UserService(userRepository);
-    const user = await userService.create({name, email});
+    const clientService = new ClientService(clientRepository);
+    const user = await clientService.create({name, email});
 
     return response.send(user);
   } catch (err) {

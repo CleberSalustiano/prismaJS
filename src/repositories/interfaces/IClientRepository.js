@@ -1,4 +1,4 @@
-class IUserRepository{
+class IClientRepository{
   create({name, email}){}
   findOne(idUser) {}
   findAll(){}
@@ -7,4 +7,4 @@ class IUserRepository{
   findByEmail(email){}
 }
 
-module.exports = IUserRepository
+module.exports = IClientRepository

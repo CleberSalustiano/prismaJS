@@ -1,7 +1,7 @@
 const prismaClient = require("../database/prismaClient");
-const IUserRepository = require("./interfaces/IUserRepository");
+const IClientRepository = require("./interfaces/IClientRepository");
 
-class UserRepository extends IUserRepository {
+class ClientRepository extends IClientRepository {
 	async create({ name, email }) {
 		const user = await prismaClient.client.create({ data: { name, email } });
 		return user;
@@ -36,4 +36,4 @@ class UserRepository extends IUserRepository {
 	}
 }
 
-module.exports = UserRepository;
+module.exports = ClientRepository;

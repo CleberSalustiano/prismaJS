@@ -5,7 +5,7 @@ class FakeOrderRepository extends IOrderRepository {
   contador = 0;
 
   create({state, idClient}){
-    const order = {state, idClient, id: this.contador, date: now()};
+    const order = {state, idClient, id: this.contador, date: new Date()};
     this.contador++;
     this.orders.push(order);
     return order;

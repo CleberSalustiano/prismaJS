@@ -1,6 +1,6 @@
-const IUserRepository = require("../interfaces/IUserRepository");
+const IClientRepository = require("../interfaces/IClientRepository");
 
-class FakeUserRepository extends IUserRepository{
+class FakeClientRepository extends IClientRepository{
   users = []
   contador = 0
 
@@ -46,4 +46,4 @@ class FakeUserRepository extends IUserRepository{
   }
 }
 
-module.exports = FakeUserRepository;
+module.exports = FakeClientRepository;

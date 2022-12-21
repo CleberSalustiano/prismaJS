@@ -2,12 +2,12 @@ const { Router } = require("express");
 const OrderRepository = require("../repositories/OrderRepository");
 const ProductItemRepository = require("../repositories/ProductItemRepository");
 const ProductRepository = require("../repositories/ProductRepository");
-const UserRepository = require("../repositories/UserRepository");
+const ClientRepository = require("../repositories/ClientRepository");
 const OrderService = require("../services/OrderService");
 
 const orderRouter = Router();
 const orderRepository = new OrderRepository();
-const clientRepository = new UserRepository();
+const clientRepository = new ClientRepository();
 const productItemRepository = new ProductItemRepository();
 const productRepository = new ProductRepository();
 
