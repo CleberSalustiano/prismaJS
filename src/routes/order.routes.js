@@ -16,6 +16,12 @@ orderRouter.get("/", async (req, res) => {
 	return res.send(orders);
 });
 
+orderRouter.get("/:id", async (req, res) => {
+  const {id} = req.params;
+	const order = await orderRepository.findOne(+id);
+	return res.send(order);
+});
+
 orderRouter.post("/", async (req, res) => {
   try {
     const {idClient} = req.body;
