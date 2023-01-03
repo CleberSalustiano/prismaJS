@@ -2,15 +2,15 @@ const {Router} = require("express");
 const ClientRepository = require("../repositories/ClientRepository")
 const ClientService = require("../services/ClientService")
 
-const userRouter = Router();
+const clientRouter = Router();
 const clientRepository = new ClientRepository();
 
-userRouter.get("/", async (request, response) => {
+clientRouter.get("/", async (request, response) => {
   const users = await clientRepository.findAll();
   return response.send(users)
 });
 
-userRouter.post("/", async (request, response) => {
+clientRouter.post("/", async (request, response) => {
   try {
     const {name, email} = request.body;
   
@@ -23,4 +23,4 @@ userRouter.post("/", async (request, response) => {
   }
 
 })
-module.exports = userRouter;
+module.exports = clientRouter;
