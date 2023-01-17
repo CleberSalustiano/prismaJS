@@ -1,7 +1,8 @@
 const AlreadyExistError = require("../errors/AlreadyExistError");
+const IClientRepository = require ("../repositories/interfaces/IClientRepository")
 
 class ClientService  {
-  constructor (clientRepository) {
+  constructor (clientRepository = new IClientRepository()) {
     this.clientRepository = clientRepository;
   }
   async create({name, email}) {

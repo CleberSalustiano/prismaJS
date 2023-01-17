@@ -1,7 +1,7 @@
 class IOrderRepository {
-  create({state, idClient}){}
-  findOne(id){}
-  findAll(){}
+  async create({state, idClient}){}
+  async findOne(id){}
+  async findAll(){}
 }
 
 module.exports = IOrderRepository

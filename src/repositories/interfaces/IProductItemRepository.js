@@ -1,7 +1,7 @@
 class IProductItemRepository {
-  create({quantity, value, idProduct, idOrder}){}
-  findOne(id){}
-  findAll(){}
+  async create({quantity, value, idProduct, idOrder}){}
+  async findOne(id){}
+  async findAll(){}
 }
 
 module.exports = IProductItemRepository
