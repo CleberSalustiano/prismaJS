@@ -1,10 +1,10 @@
-const IClientRepository = require("../repositories/interfaces/IClientRepository");
-const IOrderRepository = require("../repositories/interfaces/IOrderRepository");
-const IProductItemRepository = require("../repositories/interfaces/IProductItemRepository");
-const ProductRepository = require("../repositories/ProductRepository");
+const IClientRepository = require("../repositories/IClientRepository");
+const IOrderRepository = require("../repositories/IOrderRepository");
+const IProductItemRepository = require("../repositories/IProductItemRepository");
+const IProductRepository = require("../repositories/IProductRepository");
 
 class OrderService {
-  constructor (orderRepository = new IOrderRepository(), clientRepository = new IClientRepository(), productItemRepository = new IProductItemRepository(), productRepository = new ProductRepository()) {
+  constructor (orderRepository = new IOrderRepository(), clientRepository = new IClientRepository(), productItemRepository = new IProductItemRepository(), productRepository = new IProductRepository()) {
     this.orderRepository = orderRepository;
     this.clientRepository = clientRepository;
     this.productItemRepository = productItemRepository;

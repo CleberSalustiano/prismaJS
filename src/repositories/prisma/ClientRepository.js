@@ -1,5 +1,5 @@
-const prismaClient = require("../database/prismaClient");
-const IClientRepository = require("./interfaces/IClientRepository");
+const prismaClient = require("../../database/prismaClient");
+const IClientRepository = require("../IClientRepository");
 
 class ClientRepository extends IClientRepository {
 	async create({ name, email }) {

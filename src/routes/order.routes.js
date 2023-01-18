@@ -1,8 +1,8 @@
 const { Router } = require("express");
-const OrderRepository = require("../repositories/OrderRepository");
-const ProductItemRepository = require("../repositories/ProductItemRepository");
-const ProductRepository = require("../repositories/ProductRepository");
-const ClientRepository = require("../repositories/ClientRepository");
+const OrderRepository = require("../repositories/prisma/OrderRepository");
+const ProductItemRepository = require("../repositories/prisma/ProductItemRepository");
+const ProductRepository = require("../repositories/prisma/ProductRepository");
+const ClientRepository = require("../repositories/prisma/ClientRepository");
 const OrderService = require("../services/OrderService");
 
 const orderRouter = Router();

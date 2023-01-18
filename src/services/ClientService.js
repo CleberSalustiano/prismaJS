@@ -1,5 +1,5 @@
 const AlreadyExistError = require("../errors/AlreadyExistError");
-const IClientRepository = require ("../repositories/interfaces/IClientRepository")
+const IClientRepository = require ("../repositories/IClientRepository")
 
 class ClientService  {
   constructor (clientRepository = new IClientRepository()) {

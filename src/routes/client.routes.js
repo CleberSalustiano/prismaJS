@@ -1,5 +1,5 @@
 const {Router} = require("express");
-const ClientRepository = require("../repositories/ClientRepository")
+const ClientRepository = require("../repositories/prisma/ClientRepository")
 const ClientService = require("../services/ClientService")
 
 const clientRouter = Router();
